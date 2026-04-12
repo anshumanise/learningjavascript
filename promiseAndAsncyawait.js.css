@@ -1,0 +1,75 @@
+/* Container to center the card */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+
+}
+
+/* Updated User Card */
+.user-card {
+    /* Covers 25% of the viewport width */
+    width: 25vw; 
+    /* Ensures it doesn't get too small on phones */
+    min-width: 280px; 
+    
+    /* Horizontal Linear Gradient: Pink to Purple */
+    background: linear-gradient(180deg, #6cfaa3, #c497f1);
+    
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    gap:space-between 20px;
+    
+    /* Making text white for better contrast */
+    color: white; 
+}
+
+.user-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image styling */
+.user-card img {
+    width: 120px;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 4px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Specific text styling */
+.user-card h3 {
+    font-size: 1.5rem;
+    margin: 5px 2px;
+    display: inline-block;
+}
+
+.user-card .email {
+    opacity: 0.9;
+    margin: 10px 0 20px;
+    font-size: 0.95rem;
+}
+
+/* Button Styling */
+.btn {
+    background-color: white;
+    color: #764ba2; /* Matches the purple end of the gradient */
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}

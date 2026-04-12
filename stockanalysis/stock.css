@@ -1,0 +1,200 @@
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #070720;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 30px 40px 50px;
+}
+
+/* ── Loader Overlay ── */
+#loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(7, 7, 32, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+}
+
+.loader-box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(0, 230, 118, 0.2);
+    border-top-color: #00e676;
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loader-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #00e676;
+    letter-spacing: 0.04em;
+}
+
+.loader-sub {
+    font-size: 0.8rem;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* ── Title ── */
+.page-title {
+    text-align: center;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 28px;
+    letter-spacing: 0.01em;
+}
+
+/* ── Main Layout ── */
+.app-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* ── Chart Section (Left) ── */
+.chart-section {
+    flex: 1 1 0;
+    background: #0d1147;
+    border-radius: 6px;
+    padding: 10px 10px 20px;
+    min-width: 0;
+}
+
+.canvas-wrapper {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+/* ── Range Buttons ── */
+.range-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 18px;
+}
+
+.range-btn {
+    background: transparent;
+    border: none;
+    color: #a0aec0;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 4px 0;
+    font-family: inherit;
+    transition: color 0.15s;
+    letter-spacing: 0.02em;
+}
+
+.range-btn:hover  { color: #ffffff; }
+.range-btn.active { color: #ffffff; font-weight: 600; }
+
+/* ── Stock List Section (Right) ── */
+.list-section {
+    flex: 0 0 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-top: 4px;
+}
+
+.stock-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 6px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.15s;
+}
+
+.stock-row:hover  { background: rgba(255,255,255,0.05); }
+.stock-row.active { background: rgba(255,255,255,0.08); }
+
+.stock-row .sym-badge {
+    background: #1a237e;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 3px;
+    min-width: 52px;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+.stock-row .bv {
+    color: #d0d8f0;
+    font-size: 0.92rem;
+    flex: 1;
+    text-align: right;
+}
+
+.profit-green { color: #00e676; font-size: 0.88rem; font-weight: 600; min-width: 52px; text-align: right; }
+.profit-red   { color: #ff5252; font-size: 0.88rem; font-weight: 600; min-width: 52px; text-align: right; }
+
+/* ── Details Section (Bottom) ── */
+.details-section {
+    max-width: 1300px;
+    margin: 30px auto 0;
+    background: #0d1147;
+    border-radius: 6px;
+    padding: 22px 28px;
+}
+
+.details-section h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.det-meta {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #a0aec0;
+}
+
+#det-profit.profit-green { color: #00e676; font-weight: 600; }
+#det-profit.profit-red   { color: #ff5252; font-weight: 600; }
+#stats-display           { color: #7ec8e3; }
+
+#det-summary {
+    font-size: 0.88rem;
+    color: #8892a4;
+    line-height: 1.75;
+}
+
+/* ── Responsive ── */
+@media (max-width: 820px) {
+    .app-wrapper    { flex-direction: column; }
+    .list-section   { flex: none; width: 100%; }
+    .canvas-wrapper { height: 260px; }
+    .range-buttons  { gap: 20px; }
+}

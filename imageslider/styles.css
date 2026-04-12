@@ -1,0 +1,47 @@
+/* Main container for the carousel */
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    height: 450px;
+    margin: 50px auto;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* Image display area */
+#carouselImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 1;
+}
+
+/* Class to trigger fade effect during swap */
+.fade-out {
+    opacity: 0;
+}
+
+/* Navigation buttons (previous and next) */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 20px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background 0.3s;
+    z-index: 5;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#prevBtn { left: 0; border-radius: 0 5px 5px 0; }
+#nextBtn { right: 0; border-radius: 5px 0 0 5px; }

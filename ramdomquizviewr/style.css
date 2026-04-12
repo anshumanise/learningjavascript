@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f7f6;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.question-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 400px;
+}
+
+h2 {
+    color: #333;
+    margin-top: 0;
+}
+
+.question {
+    font-size: 1.1rem;
+    color: #555;
+    min-height: 80px;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.stop-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Task: 'stopped' class behavior */
+.stop-button.stopped {
+    background-color: #ff4757 !important; /* Changes to red */
+}
+
+
+.stop-button:disabled {
+    background-color: #d3d3d3 !important; /* Light Gray */
+    color: #888888; /* Dim text color */
+    cursor: not-allowed; /* Shows 'no' icon on hover */
+    border: 1px solid #ccc;
+    opacity: 1; /* Ensures it doesn't just look faint, but actually gray */
+}

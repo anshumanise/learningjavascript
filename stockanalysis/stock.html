@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="stock.css">
+</head>
+<body>
+
+    <!-- Loading overlay -->
+    <div id="loader-overlay">
+        <div class="loader-box">
+            <div class="spinner"></div>
+            <p class="loader-text">Connecting to server…</p>
+            <p class="loader-sub">Free servers sleep when idle.<br>This may take up to 30 seconds.</p>
+        </div>
+    </div>
+
+    <h1 class="page-title">Stock Market Analysis</h1>
+
+    <div class="app-wrapper">
+
+        <!-- LEFT: Chart -->
+        <div class="chart-section">
+            <div class="canvas-wrapper">
+                <canvas id="stockChart"></canvas>
+            </div>
+            <div class="range-buttons">
+                <button class="range-btn active" id="btn-1month" onclick="changeRange('1month')">1 Month</button>
+                <button class="range-btn" id="btn-3month" onclick="changeRange('3month')">3 Month</button>
+                <button class="range-btn" id="btn-1year"  onclick="changeRange('1year')">1 Year</button>
+                <button class="range-btn" id="btn-5year"  onclick="changeRange('5year')">5 Years</button>
+            </div>
+        </div>
+
+        <!-- RIGHT: Stock List -->
+        <div class="list-section">
+            <div id="stock-list"></div>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM: Details -->
+    <div class="details-section">
+        <h2 id="det-name">Loading...</h2>
+        <div class="det-meta">
+            <span id="det-profit"></span>
+            <span id="det-book"></span>
+            <span id="stats-display"></span>
+        </div>
+        <p id="det-summary">Please wait while data loads…</p>
+    </div>
+
+    <script src="stock.js"></script>
+</body>
+</html>
